@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Gold gradients matching Rhein-Finanz seal -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C59E27" />
+      <stop offset="35%" stop-color="#E8C760" />
+      <stop offset="70%" stop-color="#C59E27" />
+      <stop offset="100%" stop-color="#9C7815" />
+    </linearGradient>
+
+    <linearGradient id="goldGleam" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B8901C" />
+      <stop offset="50%" stop-color="#ECCF6F" />
+      <stop offset="100%" stop-color="#C59E27" />
+    </linearGradient>
+
+    <!-- Arc paths for text -->
+    <!-- Top arc for RHEIN-FINANZ -->
+    <path id="topArc" d="M 70,250 A 180,180 0 0,1 430,250" fill="none" />
+    <!-- Bottom arc for IHR FINANZPARTNER -->
+    <path id="bottomArc" d="M 80,250 A 170,170 0 0,0 420,250" fill="none" />
+  </defs>
+
+  <!-- Outer circular border -->
+  <circle cx="250" cy="250" r="238" fill="#ffffff" stroke="url(#goldGradient)" stroke-width="8" />
+
+  <!-- Outer text: RHEIN-FINANZ (Top arc) -->
+  <text fill="url(#goldGradient)" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="44" letter-spacing="9">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">
+      RHEIN-FINANZ
+    </textPath>
+  </text>
+
+  <!-- Outer text: IHR FINANZPARTNER (Bottom arc) -->
+  <text fill="url(#goldGradient)" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="22" letter-spacing="8">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">
+      IHR FINANZPARTNER
+    </textPath>
+  </text>
+
+  <!-- Golden central emblem background -->
+  <circle cx="250" cy="250" r="148" fill="url(#goldGradient)" />
+  <circle cx="250" cy="250" r="148" fill="none" stroke="#ffffff" stroke-width="4" />
+  <circle cx="250" cy="250" r="158" fill="none" stroke="url(#goldGradient)" stroke-width="3" />
+
+  <!-- Architectural line art icon (White buildings) -->
+  <g stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Left building: Multi-story residential / office tower -->
+    <rect x="175" y="175" width="62" height="122" rx="2" />
+    <!-- Horizontal floor levels in tower -->
+    <line x1="175" y1="205" x2="237" y2="205" />
+    <line x1="175" y1="235" x2="237" y2="235" />
+    <!-- Entrance door left building -->
+    <path d="M 194,297 L 194,265 L 218,265 L 218,297" />
+
+    <!-- Right building: Single family home with pitched roof -->
+    <!-- Pitched roof -->
+    <path d="M 242,237 L 273,214 L 304,237" />
+    <!-- House body -->
+    <path d="M 242,237 L 242,297 L 304,297 L 304,237" />
+    <!-- Entrance door right house -->
+    <path d="M 261,297 L 261,268 L 285,268 L 285,297" />
+  </g>
+</svg>
