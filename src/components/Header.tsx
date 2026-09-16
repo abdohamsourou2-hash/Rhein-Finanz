@@ -120,13 +120,6 @@ export default function Header() {
             </a>
 
             <a 
-              href="#ueber-uns" 
-              className="px-2.5 py-2 text-xs xl:text-sm font-bold text-[#1E2229] hover:text-[#c4a323] hover:bg-gray-100/80 rounded-lg transition-colors whitespace-nowrap"
-            >
-              Über uns
-            </a>
-
-            <a 
               href="#partner-werden" 
               className="px-2.5 py-2 text-xs xl:text-sm font-bold text-[#1E2229] hover:text-[#c4a323] hover:bg-gray-100/80 rounded-lg transition-colors whitespace-nowrap flex items-center gap-1.5"
             >
