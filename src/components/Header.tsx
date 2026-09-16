@@ -74,8 +74,11 @@ export default function Header() {
             <a href="#vorteile" className="hover:text-[#c4a323] transition-colors py-2">
               Vorteile
             </a>
-            <a href="#zinsrechner" className="hover:text-[#c4a323] transition-colors py-2">
-              Baufinanzierung & Zinsen
+            <a href="#zinsrechner" className="hover:text-[#c4a323] transition-colors py-2 flex items-center gap-1.5">
+              <span>Baufinanzierung</span>
+              <span className="text-[10px] font-bold bg-[#c4a323]/20 text-[#1E2229] border border-[#c4a323]/40 px-1.5 py-0.5 rounded-full">
+                Gratis Rechner
+              </span>
             </a>
             <a href="#wertrechner" className="hover:text-[#c4a323] transition-colors py-2">
               Immobilienbewertung
@@ -149,6 +152,14 @@ export default function Header() {
       {/* Mobile dropdown navigation */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-gray-200 bg-white px-4 pt-3 pb-6 space-y-3 animate-in fade-in slide-in-from-top-2">
+          <a
+            href="#zinsrechner"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center justify-between py-2.5 text-base font-semibold text-[#1E2229] border-b border-gray-100 hover:text-[#c4a323]"
+          >
+            <span>Kostenloser Baufinanzierungsrechner</span>
+            <span className="text-[10px] font-bold bg-[#c4a323]/20 text-[#1E2229] px-2 py-0.5 rounded-full">Gratis</span>
+          </a>
           <a
             href="#wertrechner"
             onClick={() => setMobileMenuOpen(false)}

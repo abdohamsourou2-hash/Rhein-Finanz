@@ -78,8 +78,8 @@ export default function Footer({ onOpenModal }: FooterProps) {
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#c4a323] shrink-0" />
-                <a href="mailto:info@rhein-finanz.de" className="hover:text-[#c4a323] transition-colors">
-                  info@rhein-finanz.de
+                <a href="mailto:info@rheinfinanz.com" className="hover:text-[#c4a323] transition-colors">
+                  info@rheinfinanz.com
                 </a>
               </li>
             </ul>

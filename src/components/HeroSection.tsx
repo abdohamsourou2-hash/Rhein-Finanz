@@ -53,6 +53,16 @@ export default function HeroSection() {
                     <MessageSquare className="w-5 h-5 fill-white" />
                     <span>WhatsApp</span>
                   </a>
+
+                  {/* Eye-Catcher CTA Button: Kostenloser Baufinanzierungsrechner */}
+                  <a
+                    href="#zinsrechner"
+                    id="hero-rechner-cta"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-[#1E2229] bg-gray-100 hover:bg-[#c4a323]/20 border border-gray-300 hover:border-[#c4a323] transition-all duration-200 shadow-xs active:scale-98"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                    <span>Kostenloser Baufinanzierungsrechner</span>
+                  </a>
                 </div>
 
                 {/* Foto & Advisor Badge direkt neben den Buttons */}

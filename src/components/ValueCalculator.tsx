@@ -68,13 +68,13 @@ export default function ValueCalculator() {
             </div>
             <div className="flex items-center gap-2 text-xs text-gray-300">
               <ShieldCheck className="w-4 h-4 text-[#c4a323]" />
-              <span>Direkt an Inhaber info@rhein-finanz.de</span>
+              <span>Direkt an Inhaber info@rheinfinanz.com</span>
             </div>
           </div>
 
           {/* Form with required FormSubmit.co endpoint */}
           <form
-            action="https://formsubmit.co/info@rhein-finanz.de"
+            action="https://formsubmit.co/info@rheinfinanz.com"
             method="POST"
             className="p-6 sm:p-8 lg:p-10 space-y-8"
           >

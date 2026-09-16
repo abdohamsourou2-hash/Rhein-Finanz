@@ -187,13 +187,13 @@ export default function AboutRegionality() {
 
                 {/* 4. E-Mail */}
                 <a
-                  href="mailto:info@rhein-finanz.de"
+                  href="mailto:info@rheinfinanz.com"
                   id="conversion-email"
                   className="flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all text-xs sm:col-span-2"
                 >
                   <div className="flex items-center gap-2.5">
                     <Mail className="w-4 h-4 text-[#c4a323]" />
-                    <span className="text-gray-300 font-medium">info@rhein-finanz.de</span>
+                    <span className="text-gray-300 font-medium">info@rheinfinanz.com</span>
                   </div>
                   <span className="text-gray-400">E-Mail schreiben →</span>
                 </a>
