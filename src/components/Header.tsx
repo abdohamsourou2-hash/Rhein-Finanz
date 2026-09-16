@@ -80,6 +80,9 @@ export default function Header() {
                 Gratis Rechner
               </span>
             </a>
+            <a href="#bankpartner" className="hover:text-[#c4a323] transition-colors py-2">
+              Bankenvergleich
+            </a>
             <a href="#wertrechner" className="hover:text-[#c4a323] transition-colors py-2">
               Immobilienbewertung
             </a>
@@ -159,6 +162,13 @@ export default function Header() {
           >
             <span>Kostenloser Baufinanzierungsrechner</span>
             <span className="text-[10px] font-bold bg-[#c4a323]/20 text-[#1E2229] px-2 py-0.5 rounded-full">Gratis</span>
+          </a>
+          <a
+            href="#bankpartner"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-2.5 text-base font-semibold text-[#1E2229] border-b border-gray-100 hover:text-[#c4a323]"
+          >
+            400+ Banken im Vergleich
           </a>
           <a
             href="#wertrechner"

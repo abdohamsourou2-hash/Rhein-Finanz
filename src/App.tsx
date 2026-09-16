@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import MortgageCalculator from './components/MortgageCalculator';
+import BankPartners from './components/BankPartners';
 import ValueCalculator from './components/ValueCalculator';
 import CoreServices from './components/CoreServices';
 import ProcessSteps from './components/ProcessSteps';
@@ -35,16 +36,19 @@ export default function App() {
         {/* 2. Baufi24-Inspired Baufinanzierungs- & Zinsrechner mit integriertem Lead-Formular */}
         <MortgageCalculator />
 
-        {/* 3. The 4 Core Service Tiles */}
+        {/* 3. Trust-Block: Über 400 Partnerbanken im Vergleich mit den 12 bekanntesten Instituten */}
+        <BankPartners />
+
+        {/* 4. The 4 Core Service Tiles */}
         <CoreServices />
 
-        {/* 4. The 3-Step Process: Der direkte Weg zum Kredit */}
+        {/* 5. The 3-Step Process: Der direkte Weg zum Kredit */}
         <ProcessSteps />
 
-        {/* 5. Interactive Lead Tool: Realistische Immobilien-Wertermittlung ("Wie viel ist meine Immobilie wert?") */}
+        {/* 6. Interactive Lead Tool: Realistische Immobilien-Wertermittlung ("Wie viel ist meine Immobilie wert?") */}
         <ValueCalculator />
 
-        {/* 6. Regionality, Inhaber-Portrait (Hamo Hussein) & High Conversion Contact */}
+        {/* 7. Regionality, Inhaber-Portrait (Hamo Hussein) & High Conversion Contact */}
         <AboutRegionality />
       </main>
 
