@@ -253,9 +253,14 @@ export default function MortgageCalculator() {
                   <span>Konditionen via WhatsApp prüfen</span>
                 </a>
 
-                <p className="text-[11px] text-gray-400 text-center leading-tight pt-1">
-                  Repräsentatives Berechnungsbeispiel nach PAngV. Bonitätsabhängige Konditionen. 100% kostenlose Erstberatung ohne Gebühren.
-                </p>
+                <div className="pt-2 text-[10px] text-gray-400 text-left leading-relaxed border-t border-white/10 space-y-1.5">
+                  <div className="p-2.5 rounded-lg bg-black/40 border border-white/10 text-[10px] text-gray-300 leading-normal">
+                    <strong className="text-[#c4a323] block font-bold mb-0.5">
+                      Repräsentatives Beispiel gem. § 17 Abs. 4 PAngV:
+                    </strong>
+                    Nettodarlehensbetrag: 250.000 €, Sollzinsbindung: 10 Jahre, gebundener Sollzinssatz: 3,42 % p.a., effektiver Jahreszins: 3,47 % p.a., anfängliche Tilgung: 2,00 % p.a., 120 monatliche Raten à 1.129,17 €, zu zahlender Gesamtbetrag nach 10 Jahren: 135.500,40 €, kalkulatorische Restschuld nach 10 Jahren: ca. 192.850 €. Darlehensvermittler: Rhein-Finanz, Inh. Hamo Hussein, Hauptstraße 68, 53340 Meckenheim. Bonität und grundbuchliche Besicherung vorausgesetzt.
+                  </div>
+                </div>
               </div>
 
             </div>

@@ -1,10 +1,10 @@
-import { Landmark, Home, Shield, TrendingUp, Check, ArrowRight, Banknote, FileCheck } from 'lucide-react';
+import { Landmark, Home, Shield, TrendingUp, Check, ArrowRight, Banknote, FileCheck, CreditCard, Building2, Zap } from 'lucide-react';
 
 export default function CoreServices() {
   const services = [
     {
       id: 'finanzierungen',
-      title: 'Finanzierungen',
+      title: 'Baufinanzierung & Kredite',
       subtitle: 'Direkte Kreditvergabe & Darlehen',
       badge: 'Eigener Kreditgeber',
       badgeColor: 'bg-[#c4a323] text-[#1E2229]',
@@ -14,10 +14,61 @@ export default function CoreServices() {
         'Direkte Kreditvergabe & eigene Darlehensentscheidungen',
         'Baufinanzierungen für Neubau, Kauf & Modernisierung',
         'Anschlussfinanzierungen & Forward-Darlehen zur Zinssicherung',
-        'Kapitalbeschaffung über bestehende lastenfreie Immobilien',
+        'Privatkredite & Ratenkredite für Umschuldung & Konsum',
       ],
       ctaText: 'Finanzierungsangebot anfragen',
-      ctaHref: '#wertrechner',
+      ctaHref: '#zinsrechner',
+    },
+    {
+      id: 'unternehmensfinanzierung',
+      title: 'Unternehmensfinanzierung',
+      subtitle: 'Firmenkredite & Liquidität',
+      badge: 'Gewerbe & Mittelstand',
+      badgeColor: 'bg-[#1E2229] text-[#c4a323] border border-[#c4a323]/40',
+      icon: Building2,
+      description: 'Maßgeschneiderte Finanzierungslösungen für Selbstständige, Gewerbetreibende und den Mittelstand. Investitionsdarlehen, Betriebsmittelkredite, Gewerbeimmobilien und zinsgünstige KfW-Förderdarlehen.',
+      highlights: [
+        'Investitions- & Betriebsmittelkredite für Maschinen & Wachstum',
+        'Gewerbliche Immobilienfinanzierung & Umschuldungen',
+        'KfW- & Landesförderdarlehen mit Tilgungszuschüssen',
+        'Bankenunabhängiger Vergleich über 400 Spezialfinanzierer',
+      ],
+      ctaText: 'Gewerbekredit berechnen',
+      ctaHref: '#unternehmensfinanzierung',
+    },
+    {
+      id: 'privatkredit',
+      title: 'Privatkredit & Sofortkredit',
+      subtitle: 'Schnelle Auszahlung & Zinsvorteil',
+      badge: '100% Schufa-neutral',
+      badgeColor: 'bg-emerald-700 text-white',
+      icon: CreditCard,
+      description: 'Zinsgünstige Ratenkredite von 1.000 € bis 80.000 € mit flexibler Laufzeit von 12 bis 120 Monaten. Ideal für Umschuldung teurer Altkredite, Autokauf, Renovierung oder freie Verwendung.',
+      highlights: [
+        'Zinsvergleich über 20 Partnerbanken für beste Konditionen',
+        'Günstige Umschuldung zur Senkung der monatlichen Belastung',
+        'Zweckgebundene Autokredite & Modernisierungskredite',
+        'Schnelle Bearbeitung & Auszahlung oft binnen 24–48h',
+      ],
+      ctaText: 'Privatkredit berechnen',
+      ctaHref: '#privatkredit',
+    },
+    {
+      id: 'strom-gas',
+      title: 'Strom- & Gasverträge',
+      subtitle: 'Tarifoptimierung & Wechselservice',
+      badge: 'Bis 500 € sparen',
+      badgeColor: 'bg-amber-100 text-amber-900 border border-amber-300',
+      icon: Zap,
+      description: 'Zahlen Sie nicht zu viel für Ihre Energie. Wir vergleichen geprüfte Strom- und Gastarife für Privathaushalte und Gewerbebetriebe und übernehmen die Kündigung sowie den gesamten Anbieterwechsel für Sie – völlig kostenfrei.',
+      highlights: [
+        'Kostenloser Vergleich geprüfter Qualitätsanbieter',
+        '100% Wechselservice: Wir kündigen Ihren Altanbieter',
+        'Garantiert unterbrechungsfreie Energieversorgung',
+        'Hohe Ersparnis für Privatkunden & Gewerbe',
+      ],
+      ctaText: 'Strom & Gas prüfen',
+      ctaHref: '#strom-gas',
     },
     {
       id: 'makler',
@@ -79,15 +130,15 @@ export default function CoreServices() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1E2229] text-white text-xs font-bold uppercase tracking-wide">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c4a323]/15 border border-[#c4a323]/40 text-[#1E2229] text-xs font-bold uppercase tracking-wider">
               <Banknote className="w-3.5 h-3.5 text-[#c4a323]" />
-              Alles aus einer Hand
+              <span>Alles aus einer Hand</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#1E2229] tracking-tight">
-              Die 4 Kernbereiche von Rhein-Finanz
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1E2229] tracking-tight">
+              Ganzheitliche Finanz- &amp; Immobilienlösungen
             </h2>
-            <p className="text-gray-600 text-base sm:text-lg">
-              Hier entstehen Angebote und werden Entscheidungen getroffen: Direkte Kreditvergabe kombiniert mit Makler- und Absicherungskompetenz.
+            <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+              Hier entstehen Angebote und werden Entscheidungen getroffen: Unabhängige Baufinanzierung, Unternehmenskredite, Ratenkredite, Energieoptimierung sowie Makler- und Sachverständigenkompetenz aus einer Hand.
             </p>
           </div>
 

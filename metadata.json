@@ -1,6 +1,6 @@
 {
   "name": "Rhein-Finanz",
-  "description": "Ihr Finanzdienstleister in Meckenheim – Unabhängige Baufinanzierung, direkte Kreditvergabe, zertifizierte Immobilienwertermittlung & regionale Banken-Expertise.",
+  "description": "Ihr Finanzdienstleister in Meckenheim – Baufinanzierung, Firmenkredite, Privatkredite, Strom- & Gastarifoptimierung und zertifizierte Immobilienwertermittlung.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

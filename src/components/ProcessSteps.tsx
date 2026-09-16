@@ -34,14 +34,14 @@ export default function ProcessSteps() {
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-3 mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#c4a323]/15 text-[#1E2229] border border-[#c4a323]/40 text-xs font-bold tracking-wide uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c4a323]/15 border border-[#c4a323]/40 text-[#1E2229] text-xs font-bold uppercase tracking-wider">
             <Clock className="w-3.5 h-3.5 text-[#c4a323]" />
-            Transparenter Ablauf
+            <span>Transparenter Ablauf</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-[#1E2229] tracking-tight">
-            Der direkte Weg zu Ihrem Kredit & Angebot
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1E2229] tracking-tight">
+            Der direkte Weg zu Ihrem Kredit &amp; Angebot
           </h2>
-          <p className="text-gray-600 text-base sm:text-lg">
+          <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
             In 3 klaren Schritten vom ersten Gedanken bis zur verbindlichen Darlehenszusage. Ohne Umwege, ohne Vermittlungsschleifen.
           </p>
         </div>

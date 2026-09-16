@@ -1,3 +1,5 @@
+import { ShieldCheck } from 'lucide-react';
+
 export default function BankPartners() {
   const banks = [
     {
@@ -79,8 +81,12 @@ export default function BankPartners() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Simple, clear header without overwhelming the customer */}
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-2.5">
-          <h2 className="text-2xl sm:text-3xl font-black text-[#1E2229] tracking-tight">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c4a323]/15 border border-[#c4a323]/40 text-[#1E2229] text-xs font-bold uppercase tracking-wider">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#c4a323]" />
+            <span>Bankenunabhängig &amp; Transparent</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#1E2229] tracking-tight">
             Starke Partner für Ihre Finanzierung
           </h2>
           <p className="text-sm sm:text-base text-gray-600 leading-relaxed">

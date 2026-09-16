@@ -93,28 +93,43 @@ export default function Footer({ onOpenModal, onOpenCookieSettings }: FooterProp
             </h4>
             <ul className="space-y-2 text-xs text-gray-300">
               <li>
+                <a href="#zinsrechner" className="hover:text-[#c4a323] transition-colors">
+                  • Baufinanzierungsrechner
+                </a>
+              </li>
+              <li>
+                <a href="#privatkredit" className="hover:text-[#c4a323] transition-colors font-semibold text-white">
+                  • Privatkredit & Umschuldung (Rechner)
+                </a>
+              </li>
+              <li>
+                <a href="#unternehmensfinanzierung" className="hover:text-[#c4a323] transition-colors font-semibold text-white">
+                  • Unternehmensfinanzierung & Firmenkredit
+                </a>
+              </li>
+              <li>
+                <a href="#strom-gas" className="hover:text-[#c4a323] transition-colors font-semibold text-white">
+                  • Strom- & Gasverträge (Bis 500 € sparen)
+                </a>
+              </li>
+              <li>
                 <a href="#wertrechner" className="hover:text-[#c4a323] transition-colors">
                   • Immobilien-Wertrechner
                 </a>
               </li>
               <li>
-                <a href="#leistungen" className="hover:text-[#c4a323] transition-colors">
-                  • Finanzierungen & Kreditvergabe
+                <a href="#bankpartner" className="hover:text-[#c4a323] transition-colors">
+                  • Bankenvergleich (400+ Partner)
                 </a>
               </li>
               <li>
                 <a href="#leistungen" className="hover:text-[#c4a323] transition-colors">
-                  • Immobilienmakler Rheinland
+                  • Alle 4 Kernbereiche
                 </a>
               </li>
               <li>
-                <a href="#leistungen" className="hover:text-[#c4a323] transition-colors">
-                  • Absicherungen & Versicherung
-                </a>
-              </li>
-              <li>
-                <a href="#leistungen" className="hover:text-[#c4a323] transition-colors">
-                  • Geldanlage & Vermögensaufbau
+                <a href="#partner-werden" className="hover:text-[#c4a323] transition-colors font-bold text-[#c4a323]">
+                  • Partner werden / Karriere
                 </a>
               </li>
               <li>

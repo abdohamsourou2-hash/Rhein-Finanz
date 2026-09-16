@@ -156,6 +156,10 @@ export default function LegalModals({ activeModal, onClose, onSwitchModal }: Leg
                 <h3 className="text-base font-bold text-[#1E2229] mb-1">Inhaber & Verantwortlicher</h3>
                 <p className="font-bold text-[#1E2229]">Hamo Hussein</p>
                 <p className="text-xs text-gray-600">Bankkaufmann, Immobilienmakler & freier Finanzierungsberater</p>
+                <p className="text-xs text-gray-700 mt-1">
+                  <strong>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</strong><br />
+                  Hamo Hussein, Hauptstraße 68, 53340 Meckenheim
+                </p>
               </div>
 
               <div>
@@ -274,12 +278,15 @@ export default function LegalModals({ activeModal, onClose, onSwitchModal }: Leg
                   </div>
 
                   <div className="border border-gray-200 p-3.5 rounded-xl bg-white">
-                    <h4 className="font-bold text-[#1E2229] mb-1">b) Kontaktformulare, Baufinanzierungsrechner & Wertermittlung</h4>
+                    <h4 className="font-bold text-[#1E2229] mb-1">b) Kontaktformulare, Online-Rechner & technische Übermittlung</h4>
                     <p>
-                      Wenn Sie uns über unsere interaktiven Formulare (z.B. Baufinanzierungsanfrage, Konditionsprüfung oder Immobilien-Wertermittlung) Daten übermitteln (Name, Telefonnummer, E-Mail-Adresse, Objektdaten, Darlehenssummen), werden diese zwecks Bearbeitung Ihrer Anfrage und zur Erstellung maßgeschneiderter Angebote verarbeitet.
+                      Wenn Sie uns über unsere interaktiven Formulare (z.B. Baufinanzierungsrechner, Privatkreditrechner, Unternehmensfinanzierung, Strom- & Gasprüfung oder Immobilien-Wertermittlung) Daten übermitteln (Name, Telefonnummer, E-Mail-Adresse, Objektdaten, Darlehenssummen), werden diese ausschließlich zwecks Bearbeitung Ihrer Anfrage und zur Erstellung maßgeschneiderter Angebote verarbeitet.
+                    </p>
+                    <p className="mt-1.5 text-gray-600">
+                      <strong>Auftragsverarbeitung & Übermittlungsdienst:</strong> Zur zuverlässigen und verschlüsselten Zustellung der Formularanfragen an unsere Geschäftsadresse (info@rheinfinanz.com) nutzen wir den technischen Weiterleitungsdienst FormSubmit (formsubmit.co). Die Daten werden via SSL/TLS verschlüsselt an unser Postfach transferiert und vom Dienstleister nicht für Werbezwecke ausgewertet oder dauerhaft gespeichert.
                     </p>
                     <p className="text-gray-500 mt-1">
-                      <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Durchführung vorvertraglicher Maßnahmen auf Ihre Anfrage) sowie Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).
+                      <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Durchführung vorvertraglicher Maßnahmen auf Ihre Anfrage) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und unterbrechungsfreien technischen Formularübermittlung).
                     </p>
                   </div>
 

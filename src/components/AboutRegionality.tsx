@@ -8,14 +8,14 @@ export default function AboutRegionality() {
         
         {/* Section Title */}
         <div className="max-w-3xl mx-auto text-center space-y-3 mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1E2229] text-white text-xs font-bold uppercase tracking-wide">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c4a323]/15 border border-[#c4a323]/40 text-[#1E2229] text-xs font-bold uppercase tracking-wider">
             <Award className="w-3.5 h-3.5 text-[#c4a323]" />
-            Über 15 Jahre Banken-Expertise & Regionalität
+            <span>Über 15 Jahre Banken-Expertise &amp; Regionalität</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-[#1E2229] tracking-tight">
-            Ihr persönlicher Ansprechpartner & Kreditentscheider
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1E2229] tracking-tight">
+            Ihr persönlicher Ansprechpartner &amp; Kreditentscheider
           </h2>
-          <p className="text-gray-600 text-base sm:text-lg">
+          <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
             Keine anonymen Portale, keine wechselnden Sachbearbeiter: Bei Rhein-Finanz sprechen Sie direkt mit dem Inhaber.
           </p>
         </div>

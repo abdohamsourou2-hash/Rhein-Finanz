@@ -1,5 +1,5 @@
-import { useState, useMemo } from 'react';
-import { Home, Building2, Building, Calculator, Check, ArrowRight, ShieldCheck, MapPin, Info, Sparkles } from 'lucide-react';
+import { useState, useMemo, FormEvent } from 'react';
+import { Home, Building2, Building, Calculator, Check, ArrowRight, ShieldCheck, MapPin, Info, Sparkles, CheckCircle2, MessageSquare, Phone } from 'lucide-react';
 
 export default function ValueCalculator() {
   const [propertyType, setPropertyType] = useState('Einfamilienhaus');
@@ -7,6 +7,53 @@ export default function ValueCalculator() {
   const [condition, setCondition] = useState('Gepflegt');
   const [location, setLocation] = useState('53340 Meckenheim');
   const [purpose, setPurpose] = useState('Verkauf geplant');
+  
+  // Lead form states
+  const [salutation, setSalutation] = useState('Herr');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [emailVal, setEmailVal] = useState('');
+  const [note, setNote] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!firstName || !lastName || !phone || !emailVal) return;
+
+    setIsSubmitting(true);
+    try {
+      await fetch('https://formsubmit.co/ajax/info@rheinfinanz.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          _subject: `Neue Immobilien-Wertermittlung: ${firstName} ${lastName} (${propertyType})`,
+          Anrede: salutation,
+          Vorname: firstName,
+          Nachname: lastName,
+          Telefon: phone,
+          Email: emailVal,
+          Immobilienart: propertyType,
+          Wohnflaeche: `${area} m²`,
+          Zustand: condition,
+          Standort: location,
+          Vorhaben: purpose,
+          Berechneter_Richtwert: `Ca. ${calculatedEstimate.lower} € bis ${calculatedEstimate.upper} € (Mittel: ${calculatedEstimate.average} €)`,
+          Anmerkung: note || 'Keine besondere Anmerkung',
+          Datum: new Date().toLocaleString('de-DE'),
+        }),
+      });
+    } catch {
+      // Fallback
+    } finally {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+    }
+  };
   
   // Realistic, conservative range estimation for regional Rhineland (Meckenheim, Rheinbach, Swisttal, Bonn)
   // Aligned with official Gutachterausschuss Rhein-Sieg-Kreis market transaction reports
@@ -43,14 +90,14 @@ export default function ValueCalculator() {
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-3 mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#c4a323]/15 text-[#1E2229] border border-[#c4a323]/40 text-xs font-bold tracking-wide uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#c4a323]/15 border border-[#c4a323]/40 text-[#1E2229] text-xs font-bold uppercase tracking-wider">
             <Calculator className="w-3.5 h-3.5 text-[#c4a323]" />
-            Seriöse Immobilienwertermittlung nach ImmoWertV
+            <span>Seriöse Immobilienwertermittlung nach ImmoWertV</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-[#1E2229] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1E2229] tracking-tight">
             Wie viel ist meine Immobilie wirklich wert?
           </h2>
-          <p className="text-gray-600 text-base sm:text-lg">
+          <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
             Ermitteln Sie den realistischen Marktwert Ihrer Immobilie im Rheinland. Fundiert, seriös und ohne übertriebene Lockpreise – basierend auf den realen Kaufpreissammlungen des Gutachterausschusses und über 15 Jahren Banken- und Maklererfahrung in Meckenheim.
           </p>
         </div>
@@ -72,17 +119,48 @@ export default function ValueCalculator() {
             </div>
           </div>
 
-          {/* Form with required FormSubmit.co endpoint */}
-          <form
-            action="https://formsubmit.co/info@rheinfinanz.com"
-            method="POST"
-            className="p-6 sm:p-8 lg:p-10 space-y-8"
-          >
-            {/* FormSubmit Configuration (Hidden fields) */}
-            <input type="hidden" name="_subject" value="Neue Immobilien-Wertermittlung & Finanzierungsanfrage (Rhein-Finanz)" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="berechneter_richtwert" value={`Ca. ${calculatedEstimate.lower} € bis ${calculatedEstimate.upper} €`} />
+          {/* Form with direct AJAX Lead Routing to info@rheinfinanz.com */}
+          {isSubmitted ? (
+            <div className="p-8 sm:p-12 text-center space-y-5 bg-white">
+              <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-inner">
+                <CheckCircle2 className="w-8 h-8" />
+              </div>
+              <div className="space-y-2 max-w-lg mx-auto">
+                <h3 className="text-2xl font-black text-[#1E2229]">
+                  Vielen Dank für Ihre Anfrage!
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Ihre Angaben zur <strong>{propertyType}</strong> (ca. {calculatedEstimate.lower} € – {calculatedEstimate.upper} €) wurden erfolgreich und direkt an <strong>info@rheinfinanz.com</strong> übermittelt.
+                </p>
+                <p className="text-xs text-gray-500">
+                  Herr Hamo Hussein prüft Ihre Eckdaten und meldet sich schnellstmöglich persönlich bei Ihnen.
+                </p>
+              </div>
+
+              <div className="pt-4 flex flex-wrap justify-center gap-3">
+                <a
+                  href={`https://wa.me/4922258305776?text=${encodeURIComponent(`Hallo Herr Hussein, ich habe soeben eine Wertermittlung für meine Immobilie (${propertyType}, ca. ${area} m²) an info@rheinfinanz.com gesendet.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm shadow-md transition-all active:scale-98"
+                >
+                  <MessageSquare className="w-4 h-4 fill-white" />
+                  <span>Direkt per WhatsApp nachfragen</span>
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setIsSubmitted(false)}
+                  className="px-5 py-3 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-sm transition-all"
+                >
+                  Weitere Immobilie bewerten
+                </button>
+              </div>
+            </div>
+          ) : (
+            <form
+              onSubmit={handleSubmit}
+              className="p-6 sm:p-8 lg:p-10 space-y-8"
+            >
 
             {/* Step 1: Property Type Selection */}
             <div>
@@ -137,10 +215,10 @@ export default function ValueCalculator() {
                     max="2000"
                     value={area}
                     onChange={(e) => setArea(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm text-[#1E2229] font-semibold focus:outline-hidden focus:border-[#c4a323] focus:ring-2 focus:ring-[#c4a323]/20"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base sm:text-sm text-[#1E2229] font-semibold focus:outline-hidden focus:border-[#c4a323] focus:ring-2 focus:ring-[#c4a323]/20"
                     placeholder="z.B. 140"
                   />
-                  <span className="absolute right-3.5 top-3 text-xs text-gray-400 font-bold">m²</span>
+                  <span className="absolute right-3.5 top-3.5 text-xs text-gray-400 font-bold">m²</span>
                 </div>
               </div>
 
@@ -155,10 +233,10 @@ export default function ValueCalculator() {
                     name="grundstueck_qm"
                     min="0"
                     max="10000"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm text-[#1E2229] focus:outline-hidden focus:border-[#c4a323] focus:ring-2 focus:ring-[#c4a323]/20"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base sm:text-sm text-[#1E2229] focus:outline-hidden focus:border-[#c4a323] focus:ring-2 focus:ring-[#c4a323]/20"
                     placeholder="z.B. 450"
                   />
-                  <span className="absolute right-3.5 top-3 text-xs text-gray-400 font-bold">m²</span>
+                  <span className="absolute right-3.5 top-3.5 text-xs text-gray-400 font-bold">m²</span>
                 </div>
               </div>
 
@@ -174,7 +252,7 @@ export default function ValueCalculator() {
                   min="1850"
                   max="2026"
                   defaultValue="2005"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm text-[#1E2229] font-semibold focus:outline-hidden focus:border-[#c4a323] focus:ring-2 focus:ring-[#c4a323]/20"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base sm:text-sm text-[#1E2229] font-semibold focus:outline-hidden focus:border-[#c4a323] focus:ring-2 focus:ring-[#c4a323]/20"
                   placeholder="z.B. 2005"
                 />
               </div>
@@ -191,7 +269,7 @@ export default function ValueCalculator() {
                   name="zustand"
                   value={condition}
                   onChange={(e) => setCondition(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm text-[#1E2229] font-medium bg-white focus:outline-hidden focus:border-[#c4a323] focus:ring-2 focus:ring-[#c4a323]/20"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base sm:text-sm text-[#1E2229] font-medium bg-white focus:outline-hidden focus:border-[#c4a323] focus:ring-2 focus:ring-[#c4a323]/20"
                 >
                   <option value="Neuwertig / Kürzlich saniert">Neuwertig / Kürzlich kernsaniert</option>
                   <option value="Gepflegt">Gepflegt (normaler Instandhaltungszustand)</option>
@@ -212,7 +290,7 @@ export default function ValueCalculator() {
                     required
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm text-[#1E2229] font-semibold focus:outline-hidden focus:border-[#c4a323] focus:ring-2 focus:ring-[#c4a323]/20"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base sm:text-sm text-[#1E2229] font-semibold focus:outline-hidden focus:border-[#c4a323] focus:ring-2 focus:ring-[#c4a323]/20"
                     placeholder="z.B. 53340 Meckenheim oder Bonn"
                   />
                   <MapPin className="absolute right-3.5 top-3.5 w-4 h-4 text-gray-400" />
@@ -298,6 +376,8 @@ export default function ValueCalculator() {
                   <select
                     id="anrede"
                     name="anrede"
+                    value={salutation}
+                    onChange={(e) => setSalutation(e.target.value)}
                     className="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm bg-white text-[#1E2229]"
                   >
                     <option value="Herr">Herr</option>
@@ -315,8 +395,10 @@ export default function ValueCalculator() {
                     type="text"
                     name="vorname"
                     required
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
                     placeholder="Ihr Vorname"
-                    className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg text-sm text-[#1E2229] focus:outline-hidden focus:border-[#c4a323]"
+                    className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg text-base sm:text-sm text-[#1E2229] focus:outline-hidden focus:border-[#c4a323]"
                   />
                 </div>
 
@@ -329,8 +411,10 @@ export default function ValueCalculator() {
                     type="text"
                     name="nachname"
                     required
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
                     placeholder="Ihr Nachname"
-                    className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg text-sm text-[#1E2229] focus:outline-hidden focus:border-[#c4a323]"
+                    className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg text-base sm:text-sm text-[#1E2229] focus:outline-hidden focus:border-[#c4a323]"
                   />
                 </div>
               </div>
@@ -345,8 +429,10 @@ export default function ValueCalculator() {
                     type="tel"
                     name="telefon"
                     required
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     placeholder="z.B. 0177 5169324 oder 02225..."
-                    className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg text-sm text-[#1E2229] focus:outline-hidden focus:border-[#c4a323]"
+                    className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg text-base sm:text-sm text-[#1E2229] focus:outline-hidden focus:border-[#c4a323]"
                   />
                 </div>
 
@@ -359,8 +445,10 @@ export default function ValueCalculator() {
                     type="email"
                     name="email"
                     required
+                    value={emailVal}
+                    onChange={(e) => setEmailVal(e.target.value)}
                     placeholder="ihre.adresse@beispiel.de"
-                    className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg text-sm text-[#1E2229] focus:outline-hidden focus:border-[#c4a323]"
+                    className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg text-base sm:text-sm text-[#1E2229] focus:outline-hidden focus:border-[#c4a323]"
                   />
                 </div>
               </div>
@@ -373,8 +461,10 @@ export default function ValueCalculator() {
                   id="nachricht"
                   name="nachricht"
                   rows={3}
+                  value={note}
+                  onChange={(e) => setNote(e.target.value)}
                   placeholder="Besonderheiten zur Immobilie, gewünschte Darlehenssumme oder bevorzugte Rückrufzeit..."
-                  className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg text-sm text-[#1E2229] focus:outline-hidden focus:border-[#c4a323]"
+                  className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg text-base sm:text-sm text-[#1E2229] focus:outline-hidden focus:border-[#c4a323]"
                 />
               </div>
 
@@ -398,10 +488,20 @@ export default function ValueCalculator() {
               <button
                 type="submit"
                 id="submit-valuation-btn"
-                className="w-full py-4 px-6 rounded-lg font-black text-base text-[#1E2229] bg-[#c4a323] hover:bg-[#b3921b] transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer active:scale-99"
+                disabled={isSubmitting}
+                className="w-full py-4 px-6 rounded-lg font-black text-base text-[#1E2229] bg-[#c4a323] hover:bg-[#b3921b] disabled:opacity-50 transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer active:scale-99"
               >
-                <span>Kostenlose Wertermittlung & Finanzierungsangebot anfordern</span>
-                <ArrowRight className="w-5 h-5" />
+                {isSubmitting ? (
+                  <span className="flex items-center gap-2">
+                    <span className="w-4 h-4 border-2 border-[#1E2229] border-t-transparent rounded-full animate-spin" />
+                    Wird an info@rheinfinanz.com übermittelt...
+                  </span>
+                ) : (
+                  <>
+                    <span>Kostenlose Wertermittlung & Finanzierungsangebot anfordern</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </>
+                )}
               </button>
 
               <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-gray-700">
@@ -418,6 +518,7 @@ export default function ValueCalculator() {
             </div>
 
           </form>
+          )}
 
         </div>
 

@@ -77,8 +77,17 @@ export default function Header() {
             <a href="#zinsrechner" className="hover:text-[#c4a323] transition-colors py-2 flex items-center gap-1.5">
               <span>Baufinanzierung</span>
               <span className="text-[10px] font-bold bg-[#c4a323]/20 text-[#1E2229] border border-[#c4a323]/40 px-1.5 py-0.5 rounded-full">
-                Gratis Rechner
+                Rechner
               </span>
+            </a>
+            <a href="#privatkredit" className="hover:text-[#c4a323] transition-colors py-2 flex items-center gap-1.5">
+              <span>Privatkredit</span>
+            </a>
+            <a href="#unternehmensfinanzierung" className="hover:text-[#c4a323] transition-colors py-2 flex items-center gap-1.5 font-medium">
+              <span>Firmenkredite</span>
+            </a>
+            <a href="#strom-gas" className="hover:text-[#c4a323] transition-colors py-2 flex items-center gap-1.5 font-medium">
+              <span>Strom & Gas</span>
             </a>
             <a href="#bankpartner" className="hover:text-[#c4a323] transition-colors py-2">
               Bankenvergleich
@@ -88,6 +97,12 @@ export default function Header() {
             </a>
             <a href="#leistungen" className="hover:text-[#c4a323] transition-colors py-2">
               Leistungen
+            </a>
+            <a href="#partner-werden" className="hover:text-[#c4a323] transition-colors py-2 flex items-center gap-1.5 font-bold text-[#1E2229]">
+              <span>Partner werden</span>
+              <span className="text-[10px] font-black bg-[#c4a323] text-[#1E2229] px-1.5 py-0.5 rounded-full uppercase tracking-wider">
+                Karriere
+              </span>
             </a>
             <a href="#ueber-uns" className="hover:text-[#c4a323] transition-colors py-2">
               Über uns
@@ -164,6 +179,29 @@ export default function Header() {
             <span className="text-[10px] font-bold bg-[#c4a323]/20 text-[#1E2229] px-2 py-0.5 rounded-full">Gratis</span>
           </a>
           <a
+            href="#privatkredit"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center justify-between py-2.5 text-base font-semibold text-[#1E2229] border-b border-gray-100 hover:text-[#c4a323]"
+          >
+            <span>Privatkredit & Ratenkredit</span>
+            <span className="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">Rechner</span>
+          </a>
+          <a
+            href="#unternehmensfinanzierung"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-2.5 text-base font-semibold text-[#1E2229] border-b border-gray-100 hover:text-[#c4a323]"
+          >
+            Unternehmensfinanzierung & Firmenkredit
+          </a>
+          <a
+            href="#strom-gas"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center justify-between py-2.5 text-base font-semibold text-[#1E2229] border-b border-gray-100 hover:text-[#c4a323]"
+          >
+            <span>Strom & Gas Verträge optimieren</span>
+            <span className="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">Bis 500€ sparen</span>
+          </a>
+          <a
             href="#bankpartner"
             onClick={() => setMobileMenuOpen(false)}
             className="block py-2.5 text-base font-semibold text-[#1E2229] border-b border-gray-100 hover:text-[#c4a323]"
@@ -183,6 +221,14 @@ export default function Header() {
             className="block py-2.5 text-base font-semibold text-[#1E2229] border-b border-gray-100 hover:text-[#c4a323]"
           >
             Kernbereiche & Kreditvergabe
+          </a>
+          <a
+            href="#partner-werden"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center justify-between py-2.5 text-base font-bold text-[#1E2229] border-b border-gray-100 hover:text-[#c4a323] bg-[#c4a323]/10 px-2 rounded-lg"
+          >
+            <span>Finanzierungspartner werden</span>
+            <span className="text-[10px] font-black bg-[#c4a323] text-[#1E2229] px-2 py-0.5 rounded-full uppercase">Karriere</span>
           </a>
           <a
             href="#ablauf"
