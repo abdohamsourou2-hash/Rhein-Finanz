@@ -10,10 +10,12 @@ import AboutRegionality from './components/AboutRegionality';
 import Footer from './components/Footer';
 import LegalModals from './components/LegalModals';
 import MobileQuickBar from './components/MobileQuickBar';
+import CookieConsent from './components/CookieConsent';
 import { ActiveModal } from './types';
 
 export default function App() {
   const [activeModal, setActiveModal] = useState<ActiveModal>(null);
+  const [isCookieSettingsOpen, setIsCookieSettingsOpen] = useState(false);
 
   const handleOpenModal = (modal: ActiveModal) => {
     setActiveModal(modal);
@@ -21,6 +23,14 @@ export default function App() {
 
   const handleCloseModal = () => {
     setActiveModal(null);
+  };
+
+  const handleOpenCookieSettings = () => {
+    setIsCookieSettingsOpen(true);
+  };
+
+  const handleCloseCookieSettings = () => {
+    setIsCookieSettingsOpen(false);
   };
 
   return (
@@ -52,11 +62,18 @@ export default function App() {
         <AboutRegionality />
       </main>
 
-      {/* 7. Footer with Address, Phone, Copyright 2026, Legal Modals */}
-      <Footer onOpenModal={handleOpenModal} />
+      {/* 7. Footer with Address, Phone, Copyright 2026, Legal Modals & Cookie Settings */}
+      <Footer onOpenModal={handleOpenModal} onOpenCookieSettings={handleOpenCookieSettings} />
 
       {/* Mobile Sticky Action Bar */}
       <MobileQuickBar />
+
+      {/* DSGVO & TTDSG Compliant Cookie Consent Banner & Settings Modal */}
+      <CookieConsent
+        onOpenModal={handleOpenModal}
+        isOpenExplicitly={isCookieSettingsOpen}
+        onCloseExplicit={handleCloseCookieSettings}
+      />
 
       {/* Accessible Modals for Impressum, Datenschutzerklärung, Erstinformation & AGB */}
       <LegalModals activeModal={activeModal} onClose={handleCloseModal} onSwitchModal={handleOpenModal} />

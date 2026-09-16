@@ -3,9 +3,10 @@ import { ActiveModal } from '../types';
 
 interface FooterProps {
   onOpenModal: (modal: ActiveModal) => void;
+  onOpenCookieSettings?: () => void;
 }
 
-export default function Footer({ onOpenModal }: FooterProps) {
+export default function Footer({ onOpenModal, onOpenCookieSettings }: FooterProps) {
   return (
     <footer className="bg-[#1E2229] text-white border-t border-[#c4a323]/30 pt-16 pb-24 lg:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -161,6 +162,17 @@ export default function Footer({ onOpenModal }: FooterProps) {
             >
               AGB & Widerruf
             </button>
+            {onOpenCookieSettings && (
+              <>
+                <span className="text-gray-600">|</span>
+                <button
+                  onClick={onOpenCookieSettings}
+                  className="text-gray-300 hover:text-[#c4a323] transition-colors underline underline-offset-4 cursor-pointer"
+                >
+                  Cookie-Einstellungen
+                </button>
+              </>
+            )}
           </div>
         </div>
 

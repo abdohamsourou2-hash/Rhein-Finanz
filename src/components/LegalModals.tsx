@@ -236,8 +236,8 @@ export default function LegalModals({ activeModal, onClose, onSwitchModal }: Leg
               <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="block font-bold mb-0.5">DSGVO-Konform & Keine Tracking-Cookies:</strong>
-                  Diese Website verwendet keine Tracking-Cookies von Drittanbietern (kein Google Analytics, kein Meta Pixel) und bindet Schriften lokal ein. Daher ist kein störendes Cookie-Banner erforderlich.
+                  <strong className="block font-bold mb-0.5">DSGVO- & TTDSG-konforme Cookie-Verwaltung:</strong>
+                  Wir respektieren Ihre Privatsphäre. Auf unserer Website setzen wir ein transparentes Einwilligungs-Management (Cookie-Consent-Banner) ein. Sie können jederzeit selbst entscheiden, welche Cookie-Kategorien Sie zulassen möchten oder Ihre Einstellungen über den Link „Cookie-Einstellungen“ in der Fußzeile anpassen.
                 </div>
               </div>
 
