@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#1E2229]/10 shadow-xs">
       {/* Top Bar for High Trust & Direct Calling */}
-      <div className="bg-[#1E2229] text-white text-xs py-2 px-4 sm:px-6 lg:px-6 xl:px-8 border-b border-white/5">
+      <div className="bg-[#1E2229] text-white text-xs py-2 px-4 sm:px-6 lg:px-8 border-b border-white/5">
         <div className="w-full max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
           
           {/* Top Left: Address & Regional Trust */}
@@ -59,96 +59,91 @@ export default function Header() {
       </div>
 
       {/* Main Navigation Bar */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 xl:px-8">
-        <div className="flex items-center justify-between h-20 gap-2 xl:gap-4 w-full">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20 gap-3 xl:gap-6 w-full">
           
-          {/* Left Column: Brand Logo & Title */}
+          {/* Left Column: Brand Logo & Title (shrink-0 ensures no shrink or collision) */}
           <div className="flex items-center shrink-0">
             <a href="#" className="flex items-center gap-2.5 sm:gap-3 group focus:outline-hidden" aria-label="Rhein-Finanz Startseite">
               <img 
                 src="/logo.svg" 
                 alt="Rhein-Finanz Logo - Ihr Finanzpartner" 
-                className="w-9 h-9 sm:w-10 sm:h-10 xl:w-11 xl:h-11 object-contain drop-shadow-xs group-hover:scale-105 transition-transform shrink-0"
+                className="w-10 h-10 sm:w-11 sm:h-11 object-contain drop-shadow-xs group-hover:scale-105 transition-transform shrink-0"
                 referrerPolicy="no-referrer"
               />
               <div className="flex flex-col">
-                <span className="text-lg sm:text-xl xl:text-2xl font-black tracking-tight text-[#1E2229] leading-tight">
+                <span className="text-xl sm:text-2xl font-black tracking-tight text-[#1E2229] leading-none">
                   Rhein<span className="text-[#c4a323]">-</span>Finanz
                 </span>
-                <span className="text-[9px] sm:text-[10px] xl:text-[11px] font-bold uppercase tracking-wider text-[#c4a323] whitespace-nowrap">
+                <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#c4a323] mt-0.5 whitespace-nowrap">
                   Finanzierungen &bull; Immobilien
                 </span>
               </div>
             </a>
           </div>
 
-          {/* Center Column: Symmetrically & Mathematically Centered Desktop Navigation */}
-          <nav className="hidden lg:flex items-center justify-center flex-1 min-w-0 px-1 xl:px-3">
-            <div className="flex items-center gap-0.5 xl:gap-1 p-1 xl:p-1.5 rounded-xl bg-gray-50/90 border border-gray-200/70 shadow-xs">
-              
-              <a 
-                href="#zinsrechner" 
-                className="px-2 py-1.5 xl:px-2.5 xl:py-2 rounded-lg text-xs xl:text-sm font-bold text-[#1E2229] hover:text-[#c4a323] hover:bg-white transition-all whitespace-nowrap"
-              >
-                <span className="hidden xl:inline">Baufinanzierung</span>
-                <span className="xl:hidden">Baufi</span>
-              </a>
+          {/* Center Column: Clean, Perfectly Spaced Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center justify-center gap-0.5 xl:gap-1.5">
+            <a 
+              href="#zinsrechner" 
+              className="px-2.5 py-2 text-xs xl:text-sm font-bold text-[#1E2229] hover:text-[#c4a323] hover:bg-gray-100/80 rounded-lg transition-colors whitespace-nowrap"
+            >
+              Baufinanzierung
+            </a>
 
-              <a 
-                href="#privatkredit" 
-                className="px-2 py-1.5 xl:px-2.5 xl:py-2 rounded-lg text-xs xl:text-sm font-bold text-[#1E2229] hover:text-[#c4a323] hover:bg-white transition-all whitespace-nowrap"
-              >
-                Privatkredit
-              </a>
+            <a 
+              href="#privatkredit" 
+              className="px-2.5 py-2 text-xs xl:text-sm font-bold text-[#1E2229] hover:text-[#c4a323] hover:bg-gray-100/80 rounded-lg transition-colors whitespace-nowrap"
+            >
+              Privatkredit
+            </a>
 
-              <a 
-                href="#unternehmensfinanzierung" 
-                className="px-2 py-1.5 xl:px-2.5 xl:py-2 rounded-lg text-xs xl:text-sm font-bold text-[#1E2229] hover:text-[#c4a323] hover:bg-white transition-all whitespace-nowrap"
-              >
-                Firmenkredit
-              </a>
+            <a 
+              href="#unternehmensfinanzierung" 
+              className="px-2.5 py-2 text-xs xl:text-sm font-bold text-[#1E2229] hover:text-[#c4a323] hover:bg-gray-100/80 rounded-lg transition-colors whitespace-nowrap"
+            >
+              Firmenkredit
+            </a>
 
-              <a 
-                href="#strom-gas" 
-                className="px-2 py-1.5 xl:px-2.5 xl:py-2 rounded-lg text-xs xl:text-sm font-bold text-[#1E2229] hover:text-[#c4a323] hover:bg-white transition-all whitespace-nowrap"
-              >
-                Strom &amp; Gas
-              </a>
+            <a 
+              href="#strom-gas" 
+              className="px-2.5 py-2 text-xs xl:text-sm font-bold text-[#1E2229] hover:text-[#c4a323] hover:bg-gray-100/80 rounded-lg transition-colors whitespace-nowrap"
+            >
+              Strom &amp; Gas
+            </a>
 
-              <a 
-                href="#wertrechner" 
-                className="px-2 py-1.5 xl:px-2.5 xl:py-2 rounded-lg text-xs xl:text-sm font-bold text-[#1E2229] hover:text-[#c4a323] hover:bg-white transition-all whitespace-nowrap"
-              >
-                Wertermittlung
-              </a>
+            <a 
+              href="#wertrechner" 
+              className="px-2.5 py-2 text-xs xl:text-sm font-bold text-[#1E2229] hover:text-[#c4a323] hover:bg-gray-100/80 rounded-lg transition-colors whitespace-nowrap"
+            >
+              Wertermittlung
+            </a>
 
-              <a 
-                href="#ueber-uns" 
-                className="px-2 py-1.5 xl:px-2.5 xl:py-2 rounded-lg text-xs xl:text-sm font-bold text-[#1E2229] hover:text-[#c4a323] hover:bg-white transition-all whitespace-nowrap"
-              >
-                Über uns
-              </a>
+            <a 
+              href="#ueber-uns" 
+              className="px-2.5 py-2 text-xs xl:text-sm font-bold text-[#1E2229] hover:text-[#c4a323] hover:bg-gray-100/80 rounded-lg transition-colors whitespace-nowrap"
+            >
+              Über uns
+            </a>
 
-              <a 
-                href="#partner-werden" 
-                className="px-2 py-1.5 xl:px-2.5 xl:py-2 rounded-lg text-xs xl:text-sm font-bold text-[#1E2229] hover:text-[#c4a323] hover:bg-white transition-all whitespace-nowrap flex items-center gap-1"
-              >
-                <span>Karriere</span>
-                <span className="text-[9px] xl:text-[10px] font-black bg-[#c4a323] text-[#1E2229] px-1.5 py-0.5 rounded-full uppercase tracking-wider">
-                  Partner
-                </span>
-              </a>
-
-            </div>
+            <a 
+              href="#partner-werden" 
+              className="px-2.5 py-2 text-xs xl:text-sm font-bold text-[#1E2229] hover:text-[#c4a323] hover:bg-gray-100/80 rounded-lg transition-colors whitespace-nowrap flex items-center gap-1.5"
+            >
+              <span>Karriere</span>
+              <span className="text-[9px] xl:text-[10px] font-black bg-[#c4a323]/20 text-[#1E2229] px-1.5 py-0.5 rounded-full uppercase tracking-wider">
+                Partner
+              </span>
+            </a>
           </nav>
 
-          {/* Right Column: Action Buttons for Desktop (Guaranteed No-Cutoff) */}
-          <div className="hidden lg:flex items-center justify-end shrink-0 gap-1.5 xl:gap-2.5">
-            {/* Shimmer Button 1: Jetzt anrufen */}
+          {/* Right Column: Direct CTA Action Buttons (shrink-0 ensures no overlap) */}
+          <div className="hidden lg:flex items-center justify-end gap-2 xl:gap-2.5 shrink-0">
+            {/* Call Button */}
             <a
               href="tel:022258305776"
               id="header-call-cta"
-              className="shimmer-btn inline-flex items-center gap-1.5 xl:gap-2 px-2.5 py-2 xl:px-3.5 xl:py-2.5 rounded-xl font-bold text-xs xl:text-sm text-[#1E2229] bg-[#c4a323] hover:bg-[#b3921b] transition-all shadow-xs hover:shadow-md active:scale-98 whitespace-nowrap shrink-0"
+              className="shimmer-btn inline-flex items-center gap-1.5 xl:gap-2 px-3 py-2 xl:px-3.5 xl:py-2.5 rounded-xl font-bold text-xs xl:text-sm text-[#1E2229] bg-[#c4a323] hover:bg-[#b3921b] transition-all shadow-xs hover:shadow-md active:scale-98 whitespace-nowrap shrink-0"
               title="Direkt telefonisch im Büro Meckenheim anrufen"
             >
               <Phone className="w-3.5 h-3.5 xl:w-4 xl:h-4 shrink-0 text-[#1E2229]" />
@@ -156,7 +151,7 @@ export default function Header() {
               <span className="xl:hidden">Anrufen</span>
             </a>
 
-            {/* Shimmer Button 2: WhatsApp (Fully visible with guaranteed margin) */}
+            {/* WhatsApp Button */}
             <a
               href="https://wa.me/4922258305776?text=Hallo%20Rhein-Finanz,%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Finanzierung%20bzw.%20Immobilienbewertung."
               target="_blank"
