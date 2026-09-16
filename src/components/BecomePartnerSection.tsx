@@ -54,7 +54,7 @@ export default function BecomePartnerSection() {
   return (
     <section
       id="partner-werden"
-      className="py-14 sm:py-20 bg-[#14171D] text-white relative overflow-hidden border-b border-gray-800"
+      className="py-14 sm:py-20 bg-[#14171D] text-white relative overflow-hidden border-b border-gray-800 scroll-mt-20"
     >
       {/* Dynamic Background Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#c4a323]/15 rounded-full blur-[120px] pointer-events-none" />

@@ -87,7 +87,7 @@ export default function EnergySection() {
   return (
     <section
       id="strom-gas"
-      className="py-16 sm:py-24 bg-gradient-to-b from-gray-900 to-[#14171D] text-white relative overflow-hidden border-b border-gray-800"
+      className="py-16 sm:py-24 bg-gradient-to-b from-gray-900 to-[#14171D] text-white relative overflow-hidden border-b border-gray-800 scroll-mt-20"
     >
       {/* Background glow */}
       <div className="absolute top-1/4 -right-20 w-96 h-96 bg-amber-500/10 rounded-full blur-[140px] pointer-events-none" />

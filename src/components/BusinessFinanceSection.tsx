@@ -85,8 +85,10 @@ export default function BusinessFinanceSection() {
   return (
     <section
       id="unternehmensfinanzierung"
-      className="py-16 sm:py-24 bg-white text-[#1E2229] relative overflow-hidden border-b border-gray-200"
+      className="py-16 sm:py-24 bg-white text-[#1E2229] relative overflow-hidden border-b border-gray-200 scroll-mt-20"
     >
+      <div id="firmenkredit" className="sr-only" />
+      <div id="gewerbekredit" className="sr-only" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}

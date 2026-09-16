@@ -3,7 +3,7 @@ import AdvisorPortrait from './AdvisorPortrait';
 
 export default function AboutRegionality() {
   return (
-    <section id="ueber-uns" className="py-16 lg:py-24 bg-white border-b border-gray-200">
+    <section id="ueber-uns" className="py-16 lg:py-24 bg-white border-b border-gray-200 scroll-mt-20">
       <div id="regionalitaet" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}

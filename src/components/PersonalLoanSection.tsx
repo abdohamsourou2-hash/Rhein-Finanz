@@ -115,7 +115,7 @@ export default function PersonalLoanSection() {
   return (
     <section
       id="privatkredit"
-      className="py-16 lg:py-24 bg-gradient-to-b from-white via-[#F8F9FA] to-white border-b border-gray-200"
+      className="py-16 lg:py-24 bg-gradient-to-b from-white via-[#F8F9FA] to-white border-b border-gray-200 scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
